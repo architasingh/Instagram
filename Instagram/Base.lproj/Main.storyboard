@@ -90,7 +90,7 @@
         <!--HomeViewController-->
         <scene sceneID="ChN-kG-mvK">
             <objects>
-                <viewController title="HomeViewController" id="Q1f-ek-beT" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController title="HomeViewController" modalPresentationStyle="fullScreen" id="Q1f-ek-beT" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EKY-Xk-7Df">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +115,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="insta_camera_btn"/>
+                                <connections>
+                                    <segue destination="BUq-aW-rlq" kind="presentation" id="53O-qn-dTL"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -122,6 +125,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOf-ik-a4i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1064" y="808"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="Gof-ja-Ez7">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="BUq-aW-rlq" customClass="PhotoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d4H-hW-hhr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yes-eZ-tpj">
+                                <rect key="frame" x="32" y="126" width="127" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GUY-Ea-mgn">
+                                <rect key="frame" x="167" y="126" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qg-OF-qaZ">
+                                <rect key="frame" x="32" y="272" width="134" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BUq-aW-rlq" eventType="touchUpInside" id="pA6-qR-PlE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bG6-lJ-Chi">
+                                <rect key="frame" x="32" y="311" width="134" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Camera Roll"/>
+                                <connections>
+                                    <action selector="getCameraRoll:" destination="BUq-aW-rlq" eventType="touchUpInside" id="PmH-07-Rsj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Bl-dO-d4M"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wpZ-R3-SvC"/>
+                    <connections>
+                        <outlet property="caption" destination="GUY-Ea-mgn" id="8W8-qo-WyY"/>
+                        <outlet property="postImage" destination="Yes-eZ-tpj" id="vsd-TS-u8m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KGz-65-1z0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2918.840579710145" y="807.58928571428567"/>
         </scene>
         <!--Profile-->
         <scene sceneID="W6v-vU-DJO">
@@ -137,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="otw-gz-qpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1936" y="808"/>
+            <point key="canvasLocation" x="3925" y="808"/>
         </scene>
         <!--Home-->
         <scene sceneID="2XU-VE-PXd">
@@ -158,9 +213,27 @@
             </objects>
             <point key="canvasLocation" x="174" y="808"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VmE-xu-fJ8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="slI-SK-cAu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HLN-J3-Br0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5fU-uN-auh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1993" y="808"/>
+        </scene>
     </scenes>
     <resources>
         <image name="insta_camera_btn" width="25" height="25"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

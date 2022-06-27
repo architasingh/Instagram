@@ -20,6 +20,7 @@
 		AD8D1854286A2A03002DD393 /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1853286A2A03002DD393 /* InstagramUITests.m */; };
 		AD8D1856286A2A03002DD393 /* InstagramUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1855286A2A03002DD393 /* InstagramUITestsLaunchTests.m */; };
 		AD8D1867286A5BFD002DD393 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1866286A5BFD002DD393 /* HomeViewController.m */; };
+		AD8D186A286A697C002DD393 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1869286A697C002DD393 /* PhotoViewController.m */; };
 		BEDE54BE91BD887DEE3F4FBC /* Pods_InstagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36C03C383D143999DC959B7 /* Pods_InstagramTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 		AD8D1855286A2A03002DD393 /* InstagramUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramUITestsLaunchTests.m; sourceTree = "<group>"; };
 		AD8D1865286A5BFD002DD393 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		AD8D1866286A5BFD002DD393 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		AD8D1868286A697C002DD393 /* PhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		AD8D1869286A697C002DD393 /* PhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		F36C03C383D143999DC959B7 /* Pods_InstagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD43B26AD4C6A62FFE09BE56 /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +144,8 @@
 				AD8D1833286A2A02002DD393 /* LoginViewController.h */,
 				AD8D1834286A2A02002DD393 /* LoginViewController.m */,
 				AD8D1836286A2A02002DD393 /* Main.storyboard */,
+				AD8D1868286A697C002DD393 /* PhotoViewController.h */,
+				AD8D1869286A697C002DD393 /* PhotoViewController.m */,
 				AD8D1865286A5BFD002DD393 /* HomeViewController.h */,
 				AD8D1866286A5BFD002DD393 /* HomeViewController.m */,
 				AD8D1839286A2A03002DD393 /* Assets.xcassets */,
@@ -422,6 +427,7 @@
 				AD8D1835286A2A02002DD393 /* LoginViewController.m in Sources */,
 				AD8D182F286A2A02002DD393 /* AppDelegate.m in Sources */,
 				AD8D1840286A2A03002DD393 /* main.m in Sources */,
+				AD8D186A286A697C002DD393 /* PhotoViewController.m in Sources */,
 				AD8D1867286A5BFD002DD393 /* HomeViewController.m in Sources */,
 				AD8D1832286A2A02002DD393 /* SceneDelegate.m in Sources */,
 			);
