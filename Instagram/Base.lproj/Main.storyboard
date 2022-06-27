@@ -108,7 +108,7 @@
         <!--Navigation Controller-->
         <scene sceneID="2XU-VE-PXd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="OMI-U9-USw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="OMI-U9-USw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lhg-hh-oq5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
