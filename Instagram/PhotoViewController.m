@@ -6,6 +6,8 @@
 //
 
 #import "PhotoViewController.h"
+#import "SceneDelegate.h"
+#import "Post.m"
 
 @interface PhotoViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -13,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *caption;
 - (IBAction)takePhoto:(id)sender;
 - (IBAction)getCameraRoll:(id)sender;
+- (IBAction)backToHome:(id)sender;
+- (IBAction)postImage:(id)sender;
 
 @end
 
@@ -23,6 +27,15 @@
     // Do any additional setup after loading the view.
     //[self resizeImage:self.postImage withSize:];
 }
+- (IBAction)postImage:(id)sender {
+    // [postUserImage: withCaption: withCompletion]
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (IBAction)backToHome:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
 - (IBAction)getCameraRoll:(id)sender {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
@@ -63,6 +76,7 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
     // Do something with the images (based on your use case)
+    self.postImage.image = editedImage;
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
