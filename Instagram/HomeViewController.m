@@ -62,10 +62,12 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)sender];
-    Post *post = self.arrayOfPosts[indexPath.row];
-    DetailsViewController *detailVC = [segue destinationViewController];
-    detailVC.post = post;
+    if ([[segue identifier] isEqualToString:@"details"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)sender];
+        Post *post = self.arrayOfPosts[indexPath.row];
+        DetailsViewController *detailVC = [segue destinationViewController];
+        detailVC.post = post;
+    }
 }
 
 
@@ -77,6 +79,7 @@
         cell.postImage.image = image;
     }];
     cell.postCaption.text = self.arrayOfPosts[indexPath.row][@"caption"];
+    //cell.postDate.text = post;
     return cell;
 }
 

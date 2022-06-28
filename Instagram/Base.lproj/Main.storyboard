@@ -131,7 +131,7 @@
                                             <outlet property="postCaption" destination="hC3-Bh-kHY" id="Ri7-rf-KUe"/>
                                             <outlet property="postDate" destination="lpN-Rq-zRc" id="jlq-Fm-RDO"/>
                                             <outlet property="postImage" destination="rMo-Bt-oRI" id="95b-fd-wwt"/>
-                                            <segue destination="ozP-aw-QFe" kind="show" id="qfg-Xo-uyu"/>
+                                            <segue destination="ozP-aw-QFe" kind="show" identifier="details" id="qfg-Xo-uyu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -159,7 +159,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="insta_camera_btn"/>
                                 <connections>
-                                    <segue destination="BUq-aW-rlq" kind="presentation" id="53O-qn-dTL"/>
+                                    <segue destination="BUq-aW-rlq" kind="presentation" identifier="compose" id="53O-qn-dTL"/>
                                 </connections>
                             </button>
                         </barButtonItem>
