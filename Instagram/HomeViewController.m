@@ -11,6 +11,7 @@
 #import "SceneDelegate.h"
 #import <Parse/Parse.h>
 #import "InstagramCell.h"
+#import "Post.h"
 
 @interface HomeViewController () <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -22,8 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-
     // Do any additional setup after loading the view.
 }
 
@@ -50,15 +49,32 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     InstagramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customCell" forIndexPath:indexPath];
     
-
-    // Get the post at the specified index in the posts array
-    NSDictionary *post = self.arrayOfPosts[indexPath.row];
-    
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayOfPosts.count;
+}
+
+- (void)createTimeline {
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+           // [Post postUserImage: withCaption: withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+                
+           // }];
+            
+        }
+        else {
+            // handle error
+        }
+    }];
 }
 
 @end

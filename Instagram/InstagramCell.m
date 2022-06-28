@@ -6,8 +6,8 @@
 //
 
 #import "InstagramCell.h"
-#import "Post.h"
 #import <UIKit/UIKit.h>
+#import "PFImageView.h"
 
 @implementation InstagramCell
 

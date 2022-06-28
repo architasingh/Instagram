@@ -7,7 +7,7 @@
 
 #import "PhotoViewController.h"
 #import "SceneDelegate.h"
-#import "Post.m"
+#import "Post.h"
 
 @interface PhotoViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -25,10 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //[self resizeImage:self.postImage withSize:];
 }
 - (IBAction)postImage:(id)sender {
-    // [postUserImage: withCaption: withCompletion]
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
