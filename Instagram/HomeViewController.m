@@ -12,6 +12,7 @@
 #import <Parse/Parse.h>
 #import "InstagramCell.h"
 #import "Post.h"
+#import "DetailsViewController.h"
 
 @interface HomeViewController () <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -56,15 +57,17 @@
     mySceneDelegate.window.rootViewController = loginViewController;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)sender];
+    Post *post = self.arrayOfPosts[indexPath.row];
+    DetailsViewController *detailVC = [segue destinationViewController];
+    detailVC.post = post;
 }
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     InstagramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customCell" forIndexPath:indexPath];
@@ -73,7 +76,7 @@
         UIImage *image = [UIImage imageWithData:data];
         cell.postImage.image = image;
     }];
-    cell.postCaption = self.arrayOfPosts[indexPath.row][@"caption"];
+    cell.postCaption.text = self.arrayOfPosts[indexPath.row][@"caption"];
     return cell;
 }
 
