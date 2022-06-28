@@ -23,6 +23,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.estimatedRowHeight = UITableViewAutomaticDimension;
+    self.tableView.dataSource = self;
+    
+    [self createTimeline];
     // Do any additional setup after loading the view.
 }
 
@@ -48,7 +53,12 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     InstagramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customCell" forIndexPath:indexPath];
-    
+    Post *post = self.arrayOfPosts[indexPath.row];
+    [post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        UIImage *image = [UIImage imageWithData:data];
+        cell.postImage.image = image;
+    }];
+    cell.postCaption = self.arrayOfPosts[indexPath.row][@"caption"];
     return cell;
 }
 
@@ -66,13 +76,11 @@
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
-           // [Post postUserImage: withCaption: withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-                
-           // }];
-            
+            self.arrayOfPosts = (NSMutableArray *)posts;
+            [self.tableView reloadData];
         }
         else {
-            // handle error
+            NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
     }];
 }

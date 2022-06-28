@@ -27,6 +27,9 @@
     // Do any additional setup after loading the view.
 }
 - (IBAction)postImage:(id)sender {
+    [Post postUserImage:self.postImage.image withCaption:self.caption.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    }];
+    
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
