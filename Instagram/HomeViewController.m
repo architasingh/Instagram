@@ -79,7 +79,20 @@
         cell.postImage.image = image;
     }];
     cell.postCaption.text = self.arrayOfPosts[indexPath.row][@"caption"];
-    //cell.postDate.text = post;
+    
+    NSDate *dateForm = post.createdAt;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+    
+    // Configure output format
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    
+    // Convert Date to String
+    NSString *dateString = [formatter stringFromDate:dateForm];
+    
+    cell.postDate.text = dateString;
+    
     return cell;
 }
 

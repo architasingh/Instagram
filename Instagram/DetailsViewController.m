@@ -23,6 +23,19 @@
     
     self.caption.text = self.post[@"caption"];
     
+    NSDate *dateForm = self.post.createdAt;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+    
+    // Configure output format
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    
+    // Convert Date to String
+    NSString *dateString = [formatter stringFromDate:dateForm];
+    
+    self.date.text = dateString;
+    
     // Do any additional setup after loading the view.
 }
 
