@@ -28,7 +28,22 @@
     self.tableView.dataSource = self;
     
     [self createTimeline];
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+       [self.tableView insertSubview:refreshControl atIndex:0];
     // Do any additional setup after loading the view.
+}
+
+// Makes a network request to get updated data
+// Updates the tableView with the new data
+// Hides the RefreshControl
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+    [self createTimeline];
+    
+    self.tableView.dataSource = self;
+
+    [self.tableView reloadData];
+    [refreshControl endRefreshing];
 }
 
 - (IBAction)didTapLogout:(id)sender {
