@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 - (IBAction)postImage:(id)sender {
@@ -56,8 +57,6 @@
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
     
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
-
     // The Xcode simulator does not support taking pictures, so let's first check that the camera is indeed supported on the device before trying to present it.
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -66,7 +65,6 @@
         NSLog(@"Camera 🚫 available so we will use photo library instead");
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
-
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
