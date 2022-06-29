@@ -5,7 +5,8 @@
 //  Created by Archita Singh on 6/28/22.
 //
 
-#import "DetailsViewController.h"
+# import "DetailsViewController.h"
+# import "DateTools.h"
 
 @interface DetailsViewController ()
 
@@ -24,7 +25,9 @@
     self.caption.text = self.post[@"caption"];
     
     NSDate *dateForm = self.post.createdAt;
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSString *dateString = dateForm.shortTimeAgoSinceNow;
+    
+    /*NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
     
     // Configure output format
@@ -32,7 +35,7 @@
     formatter.timeStyle = NSDateFormatterNoStyle;
     
     // Convert Date to String
-    NSString *dateString = [formatter stringFromDate:dateForm];
+    NSString *dateString = [formatter stringFromDate:dateForm];*/
     
     self.date.text = dateString;
     
