@@ -38,6 +38,7 @@
     NSString *dateString = [formatter stringFromDate:dateForm];*/
     
     self.date.text = dateString;
+    self.username.text = [@"@" stringByAppendingString: self.post.author.username];
     
     // Do any additional setup after loading the view.
 }

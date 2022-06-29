@@ -11,9 +11,7 @@
 		AD8D182F286A2A02002DD393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D182E286A2A02002DD393 /* AppDelegate.m */; };
 		AD8D1832286A2A02002DD393 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1831286A2A02002DD393 /* SceneDelegate.m */; };
 		AD8D1835286A2A02002DD393 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1834286A2A02002DD393 /* LoginViewController.m */; };
-		AD8D1838286A2A02002DD393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD8D1836286A2A02002DD393 /* Main.storyboard */; };
 		AD8D183A286A2A03002DD393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8D1839286A2A03002DD393 /* Assets.xcassets */; };
-		AD8D183D286A2A03002DD393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD8D183B286A2A03002DD393 /* LaunchScreen.storyboard */; };
 		AD8D1840286A2A03002DD393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D183F286A2A03002DD393 /* main.m */; };
 		AD8D184A286A2A03002DD393 /* InstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1849286A2A03002DD393 /* InstagramTests.m */; };
 		AD8D1854286A2A03002DD393 /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1853286A2A03002DD393 /* InstagramUITests.m */; };
@@ -24,6 +22,9 @@
 		AD8D1870286B60F5002DD393 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D186F286B60F5002DD393 /* User.m */; };
 		AD8D1876286B68AE002DD393 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1875286B68AE002DD393 /* Post.m */; };
 		AD8D1879286BA8F1002DD393 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1878286BA8F1002DD393 /* DetailsViewController.m */; };
+		AD8D1880286D0162002DD393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD8D187F286D0162002DD393 /* Main.storyboard */; };
+		AD8D1882286D0169002DD393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD8D1881286D0169002DD393 /* LaunchScreen.storyboard */; };
+		AD8D1888286D07D5002DD393 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1887286D07D5002DD393 /* ProfileViewController.m */; };
 		CAEAFC5AB080705204E7D2BD /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E273D9112E6C515A9BF76B21 /* Pods_Instagram.framework */; };
 		DADFD196D8073451BE010780 /* Pods_Instagram_InstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94137A90FFAAC720148D0A8E /* Pods_Instagram_InstagramUITests.framework */; };
 /* End PBXBuildFile section */
@@ -58,9 +59,7 @@
 		AD8D1831286A2A02002DD393 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		AD8D1833286A2A02002DD393 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		AD8D1834286A2A02002DD393 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		AD8D1837286A2A02002DD393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD8D1839286A2A03002DD393 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AD8D183C286A2A03002DD393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD8D183E286A2A03002DD393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD8D183F286A2A03002DD393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD8D1845286A2A03002DD393 /* InstagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +79,10 @@
 		AD8D1875286B68AE002DD393 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		AD8D1877286BA8F1002DD393 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		AD8D1878286BA8F1002DD393 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		AD8D187F286D0162002DD393 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AD8D1881286D0169002DD393 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AD8D1886286D07D5002DD393 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		AD8D1887286D07D5002DD393 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		CDD8178502493F40F562F5A7 /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 		D39E4BEC72D458791EFC1F97 /* Pods-Instagram-InstagramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-InstagramUITests.release.xcconfig"; path = "Target Support Files/Pods-Instagram-InstagramUITests/Pods-Instagram-InstagramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E273D9112E6C515A9BF76B21 /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,27 +152,14 @@
 		AD8D182C286A2A02002DD393 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
-				AD8D182D286A2A02002DD393 /* AppDelegate.h */,
-				AD8D182E286A2A02002DD393 /* AppDelegate.m */,
-				AD8D1830286A2A02002DD393 /* SceneDelegate.h */,
-				AD8D1831286A2A02002DD393 /* SceneDelegate.m */,
-				AD8D1833286A2A02002DD393 /* LoginViewController.h */,
-				AD8D1834286A2A02002DD393 /* LoginViewController.m */,
-				AD8D1836286A2A02002DD393 /* Main.storyboard */,
-				AD8D1877286BA8F1002DD393 /* DetailsViewController.h */,
-				AD8D1878286BA8F1002DD393 /* DetailsViewController.m */,
-				AD8D186E286B60F5002DD393 /* User.h */,
-				AD8D186F286B60F5002DD393 /* User.m */,
-				AD8D1874286B68AE002DD393 /* Post.h */,
-				AD8D1875286B68AE002DD393 /* Post.m */,
+				AD8D187F286D0162002DD393 /* Main.storyboard */,
+				AD8D1881286D0169002DD393 /* LaunchScreen.storyboard */,
+				AD8D187C286CFDC4002DD393 /* Delegates */,
+				AD8D187D286CFDDA002DD393 /* Models */,
+				AD8D187B286CFDA3002DD393 /* View Controllers */,
+				AD8D1839286A2A03002DD393 /* Assets.xcassets */,
 				AD8D186B286B5EAD002DD393 /* InstagramCell.h */,
 				AD8D186C286B5EAD002DD393 /* InstagramCell.m */,
-				AD8D1868286A697C002DD393 /* PhotoViewController.h */,
-				AD8D1869286A697C002DD393 /* PhotoViewController.m */,
-				AD8D1865286A5BFD002DD393 /* HomeViewController.h */,
-				AD8D1866286A5BFD002DD393 /* HomeViewController.m */,
-				AD8D1839286A2A03002DD393 /* Assets.xcassets */,
-				AD8D183B286A2A03002DD393 /* LaunchScreen.storyboard */,
 				AD8D183E286A2A03002DD393 /* Info.plist */,
 				AD8D183F286A2A03002DD393 /* main.m */,
 			);
@@ -191,6 +181,45 @@
 				AD8D1855286A2A03002DD393 /* InstagramUITestsLaunchTests.m */,
 			);
 			path = InstagramUITests;
+			sourceTree = "<group>";
+		};
+		AD8D187B286CFDA3002DD393 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD8D1877286BA8F1002DD393 /* DetailsViewController.h */,
+				AD8D1878286BA8F1002DD393 /* DetailsViewController.m */,
+				AD8D1833286A2A02002DD393 /* LoginViewController.h */,
+				AD8D1834286A2A02002DD393 /* LoginViewController.m */,
+				AD8D1868286A697C002DD393 /* PhotoViewController.h */,
+				AD8D1869286A697C002DD393 /* PhotoViewController.m */,
+				AD8D1865286A5BFD002DD393 /* HomeViewController.h */,
+				AD8D1866286A5BFD002DD393 /* HomeViewController.m */,
+				AD8D1886286D07D5002DD393 /* ProfileViewController.h */,
+				AD8D1887286D07D5002DD393 /* ProfileViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AD8D187C286CFDC4002DD393 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				AD8D182D286A2A02002DD393 /* AppDelegate.h */,
+				AD8D182E286A2A02002DD393 /* AppDelegate.m */,
+				AD8D1830286A2A02002DD393 /* SceneDelegate.h */,
+				AD8D1831286A2A02002DD393 /* SceneDelegate.m */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		AD8D187D286CFDDA002DD393 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD8D186E286B60F5002DD393 /* User.h */,
+				AD8D186F286B60F5002DD393 /* User.m */,
+				AD8D1874286B68AE002DD393 /* Post.h */,
+				AD8D1875286B68AE002DD393 /* Post.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F1F61736C0C68F01B6DA9DB2 /* Pods */ = {
@@ -314,9 +343,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD8D183D286A2A03002DD393 /* LaunchScreen.storyboard in Resources */,
+				AD8D1882286D0169002DD393 /* LaunchScreen.storyboard in Resources */,
 				AD8D183A286A2A03002DD393 /* Assets.xcassets in Resources */,
-				AD8D1838286A2A02002DD393 /* Main.storyboard in Resources */,
+				AD8D1880286D0162002DD393 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +481,7 @@
 				AD8D1876286B68AE002DD393 /* Post.m in Sources */,
 				AD8D1840286A2A03002DD393 /* main.m in Sources */,
 				AD8D186A286A697C002DD393 /* PhotoViewController.m in Sources */,
+				AD8D1888286D07D5002DD393 /* ProfileViewController.m in Sources */,
 				AD8D1867286A5BFD002DD393 /* HomeViewController.m in Sources */,
 				AD8D1832286A2A02002DD393 /* SceneDelegate.m in Sources */,
 			);
@@ -488,25 +518,6 @@
 			targetProxy = AD8D1850286A2A03002DD393 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AD8D1836286A2A02002DD393 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD8D1837286A2A02002DD393 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AD8D183B286A2A03002DD393 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD8D183C286A2A03002DD393 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AD8D1857286A2A03002DD393 /* Debug */ = {

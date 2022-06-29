@@ -93,6 +93,8 @@
     
     cell.postDate.text = dateString;
     
+    cell.username.text = [@"@" stringByAppendingString: post.author.username];
+    
     return cell;
 }
 
