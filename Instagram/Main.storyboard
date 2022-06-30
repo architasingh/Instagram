@@ -589,7 +589,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="H1z-aF-HUI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="H1z-aF-HUI" customClass="PFImageView">
                                 <rect key="frame" x="10" y="117" width="42" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="oVl-va-0zc"/>
@@ -630,7 +630,7 @@
                     <connections>
                         <outlet property="caption" destination="2U8-Tw-dKI" id="ng8-TD-3G7"/>
                         <outlet property="date" destination="HzV-P5-HuH" id="iZf-iT-sv5"/>
-                        <outlet property="postImage" destination="8sY-iP-HYE" id="WTs-DQ-jmQ"/>
+                        <outlet property="postImage" destination="8sY-iP-HYE" id="85f-oj-fZp"/>
                         <outlet property="username" destination="Snh-fZ-Esw" id="gtQ-mp-0x7"/>
                     </connections>
                 </viewController>

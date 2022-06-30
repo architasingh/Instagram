@@ -7,6 +7,7 @@
 
 # import "DetailsViewController.h"
 # import "DateTools.h"
+# import "PFImageView.h"
 
 @interface DetailsViewController ()
 
@@ -21,6 +22,10 @@
         UIImage *image = [UIImage imageWithData:data];
         self.postImage.image = image;
     }];
+    
+    PFUser *user = self.post.author;
+    self.postImage.file = user[@"profilePicture"];
+    [self.postImage loadInBackground];
         
     NSDate *dateForm = self.post.createdAt;
     NSString *dateString = dateForm.timeAgoSinceNow;
