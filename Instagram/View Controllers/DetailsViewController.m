@@ -27,16 +27,6 @@
     NSDate *dateForm = self.post.createdAt;
     NSString *dateString = dateForm.shortTimeAgoSinceNow;
     
-    /*NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
-    
-    // Configure output format
-    formatter.dateStyle = NSDateFormatterShortStyle;
-    formatter.timeStyle = NSDateFormatterNoStyle;
-    
-    // Convert Date to String
-    NSString *dateString = [formatter stringFromDate:dateForm];*/
-    
     self.date.text = dateString;
     self.username.text = [@"@" stringByAppendingString: self.post.author.username];
     

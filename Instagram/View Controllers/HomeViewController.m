@@ -13,6 +13,7 @@
 #import "InstagramCell.h"
 #import "Post.h"
 #import "DetailsViewController.h"
+#import "DateTools.h"
 
 @interface HomeViewController () <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -78,23 +79,21 @@
         UIImage *image = [UIImage imageWithData:data];
         cell.postImage.image = image;
     }];
-    cell.postCaption.text = self.arrayOfPosts[indexPath.row][@"caption"];
-    
     NSDate *dateForm = post.createdAt;
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
-    
-    // Configure output format
-    formatter.dateStyle = NSDateFormatterShortStyle;
-    formatter.timeStyle = NSDateFormatterNoStyle;
-    
-    // Convert Date to String
-    NSString *dateString = [formatter stringFromDate:dateForm];
+    NSString *dateString = dateForm.shortTimeAgoSinceNow;
     
     cell.postDate.text = dateString;
     
-    cell.username.text = [@"@" stringByAppendingString: post.author.username];
+    NSString *username = [@"@" stringByAppendingString: post.author.username];
+    cell.username.text = username;
     
+    NSString *space = @"  ";
+    NSString *usernameCaption =[username stringByAppendingString: space];
+    cell.postCaption.text = [usernameCaption stringByAppendingString: self.arrayOfPosts[indexPath.row][@"caption"]];
+
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return cell;
 }
 
