@@ -32,9 +32,6 @@
     self.profilePic.file = user[@"profilePicture"];
     [self.profilePic loadInBackground];
     
-    self.profilePic.layer.cornerRadius = 50;
-    self.profilePic.layer.masksToBounds = YES;
-    
     self.pfpTableView.dataSource = self;
     [self.pfpTableView reloadData];
     
