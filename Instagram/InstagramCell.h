@@ -18,11 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *postCaption;
 @property (weak, nonatomic) IBOutlet UILabel *postDate;
 @property (weak, nonatomic) IBOutlet UILabel *username;
-@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+@property (weak, nonatomic) IBOutlet PFImageView *profilePic;
 
 @property (weak, nonatomic) IBOutlet PFImageView *profilePost;
 @property (weak, nonatomic) IBOutlet UILabel *profileUsername;
-@property (weak, nonatomic) IBOutlet UIImageView *profilepfp;
+@property (weak, nonatomic) IBOutlet PFImageView *profilePfp;
 @property (weak, nonatomic) IBOutlet UILabel *profileDate;
 @property (weak, nonatomic) IBOutlet UILabel *profileCaption;
 

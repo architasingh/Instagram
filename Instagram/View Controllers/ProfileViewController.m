@@ -15,7 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *pfpTableView;
 @property (nonatomic, strong) NSMutableArray *arrayOfPosts;
-//@property (nonatomic, strong) NSMutableArray *profilePosts;
 
 @end
 
@@ -28,9 +27,10 @@
     self.pfpTableView.estimatedRowHeight = UITableViewAutomaticDimension;
     
     PFUser *user = PFUser.currentUser;
-    //user[@"profilePicture"] = [self getPFFileFromImage:];
-
     self.username.text = [@"@" stringByAppendingString: user.username];
+    
+    self.profilePic.file = user[@"profilePicture"];
+    [self.profilePic loadInBackground];
     
     self.profilePic.layer.cornerRadius = 50;
     self.profilePic.layer.masksToBounds = YES;
@@ -48,6 +48,10 @@
 
     // Do something with the images (based on your use case)
     self.profilePic.image = editedImage;
+    
+    PFUser *user = PFUser.currentUser;
+    user[@"profilePicture"] = [self getPFFileFromImage:self.profilePic.image];
+    [user saveInBackground];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -99,16 +103,6 @@
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (void)createTimeline {
     // construct PFQuery
     PFQuery *postQuery = [Post query];
@@ -130,23 +124,13 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    /*InstagramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customCell" forIndexPath:indexPath];
-    Post *post = self.arrayOfPosts[indexPath.row];
-    
-    [post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-        UIImage *image = [UIImage imageWithData:data];
-        cell.profilePost.image = image;
-    }];
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;*/
-    
     InstagramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customCell" forIndexPath:indexPath];
     Post *post = self.arrayOfPosts[indexPath.row];
     [post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         UIImage *image = [UIImage imageWithData:data];
         cell.profilePost.image = image;
     }];
+    
     NSDate *dateForm = post.createdAt;
     NSString *dateString = dateForm.timeAgoSinceNow;
     
@@ -165,7 +149,10 @@
     [cell.profileCaption setAttributedText: boldedString];
     
     PFUser *user = PFUser.currentUser;
-    cell.profilepfp.image = user[@"profilePicture"];
+    cell.profilePfp.file = user[@"profilePicture"];
+    
+    cell.profilePfp.layer.cornerRadius = 21;
+    cell.profilePfp.layer.masksToBounds = YES;
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 

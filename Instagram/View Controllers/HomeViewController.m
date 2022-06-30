@@ -59,7 +59,6 @@
     mySceneDelegate.window.rootViewController = loginViewController;
 }
 
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -71,7 +70,6 @@
         detailVC.post = post;
     }
 }
-
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     InstagramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customCell" forIndexPath:indexPath];
@@ -97,8 +95,13 @@
     [boldedString addAttribute: NSFontAttributeName value:[UIFont boldSystemFontOfSize:17] range:boldRange];
     [cell.postCaption setAttributedText: boldedString];
     
-    PFUser *user = PFUser.currentUser;
-    cell.profilePic.image = user[@"profilePicture"];
+    PFUser *user = post.author;
+    cell.profilePic.file = user[@"profilePicture"];
+    [cell.profilePic loadInBackground];
+    
+    cell.profilePic.layer.cornerRadius = 21;
+    cell.profilePic.layer.masksToBounds = YES;
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     return cell;

@@ -24,7 +24,6 @@
     [super viewDidLoad];
 }
 
-
 - (IBAction)loginUser:(id)sender {
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
