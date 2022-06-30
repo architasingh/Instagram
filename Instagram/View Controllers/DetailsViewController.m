@@ -21,14 +21,23 @@
         UIImage *image = [UIImage imageWithData:data];
         self.postImage.image = image;
     }];
-    
-    self.caption.text = self.post[@"caption"];
-    
+        
     NSDate *dateForm = self.post.createdAt;
     NSString *dateString = dateForm.timeAgoSinceNow;
     
     self.date.text = dateString;
-    self.username.text = [@"@" stringByAppendingString: self.post.author.username];
+    
+    NSString *username = [@"@" stringByAppendingString: self.post.author.username];
+    self.username.text = username;
+    
+    NSString *space = @"  ";
+    NSString *usernameCaption = [username stringByAppendingString: space];
+    NSString *fullCaption = [usernameCaption stringByAppendingString: self.post[@"caption"]];
+
+    NSMutableAttributedString *boldedString = [[NSMutableAttributedString alloc] initWithString:fullCaption];
+    NSRange boldRange = [fullCaption rangeOfString:usernameCaption];
+    [boldedString addAttribute: NSFontAttributeName value:[UIFont boldSystemFontOfSize:17] range:boldRange];
+    [self.caption setAttributedText: boldedString];
     
     // Do any additional setup after loading the view.
 }

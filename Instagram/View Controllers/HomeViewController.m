@@ -88,9 +88,13 @@
     cell.username.text = username;
     
     NSString *space = @"  ";
-    NSString *usernameCaption =[username stringByAppendingString: space];
-    cell.postCaption.text = [usernameCaption stringByAppendingString: self.arrayOfPosts[indexPath.row][@"caption"]];
+    NSString *usernameCaption = [username stringByAppendingString: space];
+    NSString *fullCaption = [usernameCaption stringByAppendingString: self.arrayOfPosts[indexPath.row][@"caption"]];
 
+    NSMutableAttributedString *boldedString = [[NSMutableAttributedString alloc] initWithString:fullCaption];
+    NSRange boldRange = [fullCaption rangeOfString:usernameCaption];
+    [boldedString addAttribute: NSFontAttributeName value:[UIFont boldSystemFontOfSize:17] range:boldRange];
+    [cell.postCaption setAttributedText: boldedString];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
