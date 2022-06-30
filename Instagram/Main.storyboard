@@ -174,8 +174,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpN-Rq-zRc">
-                                                    <rect key="frame" x="20" y="477" width="92" height="38"/>
+                                                    <rect key="frame" x="20" y="477" width="155" height="38"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="155" id="Gzb-Ed-JPA"/>
                                                         <constraint firstAttribute="height" constant="38" id="sLS-ET-ibQ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
@@ -184,7 +185,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="lpN-Rq-zRc" secondAttribute="trailing" constant="282" id="0qw-gH-tgP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="lpN-Rq-zRc" secondAttribute="trailing" constant="219" id="2ci-VP-Q1m"/>
                                                 <constraint firstItem="rMo-Bt-oRI" firstAttribute="leading" secondItem="0R9-yk-r43" secondAttribute="leading" id="4Il-fO-4Km"/>
                                                 <constraint firstItem="hC3-Bh-kHY" firstAttribute="leading" secondItem="0R9-yk-r43" secondAttribute="leadingMargin" id="5Qb-ZG-jtx"/>
                                                 <constraint firstItem="hC3-Bh-kHY" firstAttribute="trailing" secondItem="0R9-yk-r43" secondAttribute="trailingMargin" id="Pyy-bq-wYc"/>
@@ -309,7 +310,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GUY-Ea-mgn">
                                         <rect key="frame" x="158" y="35" width="216" height="115"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -525,9 +526,6 @@
         <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="photo" catalog="system" width="128" height="93"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

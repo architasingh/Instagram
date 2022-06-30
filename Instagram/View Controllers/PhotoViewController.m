@@ -9,7 +9,7 @@
 #import "SceneDelegate.h"
 #import "Post.h"
 
-@interface PhotoViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface PhotoViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
 @property (weak, nonatomic) IBOutlet UITextView *caption;
@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.caption.delegate = self;
     
     // Do any additional setup after loading the view.
 }
@@ -93,6 +94,11 @@
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+   textView.text = @"";
 }
 
 /*

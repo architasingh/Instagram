@@ -25,7 +25,7 @@
     self.caption.text = self.post[@"caption"];
     
     NSDate *dateForm = self.post.createdAt;
-    NSString *dateString = dateForm.shortTimeAgoSinceNow;
+    NSString *dateString = dateForm.timeAgoSinceNow;
     
     self.date.text = dateString;
     self.username.text = [@"@" stringByAppendingString: self.post.author.username];

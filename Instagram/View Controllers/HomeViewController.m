@@ -80,7 +80,7 @@
         cell.postImage.image = image;
     }];
     NSDate *dateForm = post.createdAt;
-    NSString *dateString = dateForm.shortTimeAgoSinceNow;
+    NSString *dateString = dateForm.timeAgoSinceNow;
     
     cell.postDate.text = dateString;
     
