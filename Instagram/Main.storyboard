@@ -388,6 +388,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAm-8N-bDM">
+                                <rect key="frame" x="46" y="231" width="148" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="zJ5-j9-2uE" eventType="touchUpInside" id="XU5-Mh-GLL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvS-Vu-7kO">
+                                <rect key="frame" x="211" y="231" width="149" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Camera Roll"/>
+                                <connections>
+                                    <action selector="getCameraRoll:" destination="zJ5-j9-2uE" eventType="touchUpInside" id="SiD-2u-qra"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uCB-Nj-8do"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -404,7 +422,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="NlQ-jr-hfy"/>
                     <connections>
+                        <outlet property="pickfromCam" destination="HvS-Vu-7kO" id="SIK-Ag-jTn"/>
                         <outlet property="profilePic" destination="1fz-Na-fTO" id="ABK-Dl-jG8"/>
+                        <outlet property="takePic" destination="gAm-8N-bDM" id="Gpg-mq-Uex"/>
                         <outlet property="username" destination="sUB-8M-zH2" id="ZM4-4v-YXd"/>
                     </connections>
                 </viewController>
