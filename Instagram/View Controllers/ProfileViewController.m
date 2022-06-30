@@ -8,8 +8,10 @@
 #import "ProfileViewController.h"
 #import "Post.h"
 #import "InstagramCell.h"
+#import "PFImageView.h"
 
 @interface ProfileViewController () <UIImagePickerControllerDelegate, UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UITableView *pfpTableView;
 @property (nonatomic, strong) NSMutableArray *arrayOfPosts;
 
@@ -24,15 +26,14 @@
     self.pfpTableView.estimatedRowHeight = UITableViewAutomaticDimension;
     
     PFUser *user = PFUser.currentUser;
+    //user[@"profilePicture"] = [self getPFFileFromImage:];
 
-    self.username.text = [@"@" stringByAppendingString: user[@"username"]];
-    self.profilePic.image = user[@"profilePicture"];
+    self.username.text = [@"@" stringByAppendingString: user.username];
     
     self.profilePic.layer.cornerRadius = 50;
     self.profilePic.layer.masksToBounds = YES;
     
     self.pfpTableView.dataSource = self;
-
     [self.pfpTableView reloadData];
     
 }
@@ -45,8 +46,6 @@
 
     // Do something with the images (based on your use case)
     self.profilePic.image = editedImage;
-    
-    // post
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -82,7 +81,7 @@
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
-+ (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
+- (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
 
     // check if image is not nil
     if (!image) {
@@ -133,9 +132,10 @@
     
     [post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         UIImage *image = [UIImage imageWithData:data];
-        cell.postImage.image = image;
+        cell.profilePost.image = image;
     }];
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

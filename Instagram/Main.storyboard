@@ -422,10 +422,12 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lwU-IG-6Ko" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="78" width="414" height="296"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.43193458029999998" green="0.74799664759999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="profilePost" destination="lwU-IG-6Ko" id="25G-Fw-GCH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

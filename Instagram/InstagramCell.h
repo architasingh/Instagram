@@ -13,12 +13,16 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface InstagramCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
 @property (weak, nonatomic) IBOutlet UILabel *postCaption;
 @property (weak, nonatomic) IBOutlet UILabel *postDate;
-@property (strong, nonatomic) Post *post;
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+
+@property (weak, nonatomic) IBOutlet PFImageView *profilePost;
+
+@property (strong, nonatomic) Post *post;
 
 @end
 
