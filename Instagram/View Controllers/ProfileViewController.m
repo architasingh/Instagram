@@ -9,11 +9,13 @@
 #import "Post.h"
 #import "InstagramCell.h"
 #import "PFImageView.h"
+#import "DateTools.h"
 
 @interface ProfileViewController () <UIImagePickerControllerDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *pfpTableView;
 @property (nonatomic, strong) NSMutableArray *arrayOfPosts;
+//@property (nonatomic, strong) NSMutableArray *profilePosts;
 
 @end
 
@@ -112,8 +114,9 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
+    [postQuery whereKey: @"author" equalTo:PFUser.currentUser];
     postQuery.limit = 20;
-
+    
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
@@ -127,7 +130,7 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    InstagramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customCell" forIndexPath:indexPath];
+    /*InstagramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customCell" forIndexPath:indexPath];
     Post *post = self.arrayOfPosts[indexPath.row];
     
     [post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
@@ -136,7 +139,38 @@
     }];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;*/
+    
+    InstagramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customCell" forIndexPath:indexPath];
+    Post *post = self.arrayOfPosts[indexPath.row];
+    [post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        UIImage *image = [UIImage imageWithData:data];
+        cell.profilePost.image = image;
+    }];
+    NSDate *dateForm = post.createdAt;
+    NSString *dateString = dateForm.timeAgoSinceNow;
+    
+    cell.profileDate.text = dateString;
+    
+    NSString *username = [@"@" stringByAppendingString: post.author.username];
+    cell.profileUsername.text = username;
+    
+    NSString *space = @"  ";
+    NSString *usernameCaption = [username stringByAppendingString: space];
+    NSString *fullCaption = [usernameCaption stringByAppendingString: self.arrayOfPosts[indexPath.row][@"caption"]];
+
+    NSMutableAttributedString *boldedString = [[NSMutableAttributedString alloc] initWithString:fullCaption];
+    NSRange boldRange = [fullCaption rangeOfString:usernameCaption];
+    [boldedString addAttribute: NSFontAttributeName value:[UIFont boldSystemFontOfSize:17] range:boldRange];
+    [cell.profileCaption setAttributedText: boldedString];
+    
+    PFUser *user = PFUser.currentUser;
+    cell.profilepfp.image = user[@"profilePicture"];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return cell;
+    
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
