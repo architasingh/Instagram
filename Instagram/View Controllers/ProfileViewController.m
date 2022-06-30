@@ -38,6 +38,19 @@
     self.pfpTableView.dataSource = self;
     [self.pfpTableView reloadData];
     
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+       [self.pfpTableView insertSubview:refreshControl atIndex:0];
+    
+}
+
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+    [self createTimeline];
+    
+    self.pfpTableView.dataSource = self;
+
+    [self.pfpTableView reloadData];
+    [refreshControl endRefreshing];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
