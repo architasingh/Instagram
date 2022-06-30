@@ -6,8 +6,12 @@
 //
 
 #import "ProfileViewController.h"
+#import "Post.h"
+#import "InstagramCell.h"
 
-@interface ProfileViewController () <UIImagePickerControllerDelegate>
+@interface ProfileViewController () <UIImagePickerControllerDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *pfpTableView;
+@property (nonatomic, strong) NSMutableArray *arrayOfPosts;
 
 @end
 
@@ -15,12 +19,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self createTimeline];
     
-    self.username.text = [@"@" stringByAppendingString: PFUser.currentUser.username];
+    self.pfpTableView.estimatedRowHeight = UITableViewAutomaticDimension;
+    
+    PFUser *user = PFUser.currentUser;
+
+    self.username.text = [@"@" stringByAppendingString: user[@"username"]];
+    self.profilePic.image = user[@"profilePicture"];
+    
     self.profilePic.layer.cornerRadius = 50;
     self.profilePic.layer.masksToBounds = YES;
     
-    // Do any additional setup after loading the view.
+    self.pfpTableView.dataSource = self;
+
+    [self.pfpTableView reloadData];
+    
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
@@ -31,6 +45,8 @@
 
     // Do something with the images (based on your use case)
     self.profilePic.image = editedImage;
+    
+    // post
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -66,6 +82,22 @@
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
++ (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
+
+    // check if image is not nil
+    if (!image) {
+        return nil;
+    }
+
+    NSData *imageData = UIImagePNGRepresentation(image);
+    // get image data and check if that is not nil
+    if (!imageData) {
+        return nil;
+    }
+
+    return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -75,5 +107,40 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)createTimeline {
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            self.arrayOfPosts = (NSMutableArray *)posts;
+            [self.pfpTableView reloadData];
+        }
+        else {
+            NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
+        }
+    }];
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    InstagramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"customCell" forIndexPath:indexPath];
+    Post *post = self.arrayOfPosts[indexPath.row];
+    
+    [post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        UIImage *image = [UIImage imageWithData:data];
+        cell.postImage.image = image;
+    }];
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.arrayOfPosts.count;
+}
 
 @end

@@ -30,6 +30,7 @@
     self.tableView.dataSource = self;
     
     [self createTimeline];
+    
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
        [self.tableView insertSubview:refreshControl atIndex:0];
@@ -96,6 +97,8 @@
     [boldedString addAttribute: NSFontAttributeName value:[UIFont boldSystemFontOfSize:17] range:boldRange];
     [cell.postCaption setAttributedText: boldedString];
     
+    PFUser *user = PFUser.currentUser;
+    cell.profilePic.image = user[@"profilePicture"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     return cell;

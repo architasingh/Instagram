@@ -19,7 +19,6 @@
 		AD8D1867286A5BFD002DD393 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1866286A5BFD002DD393 /* HomeViewController.m */; };
 		AD8D186A286A697C002DD393 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1869286A697C002DD393 /* PhotoViewController.m */; };
 		AD8D186D286B5EAD002DD393 /* InstagramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D186C286B5EAD002DD393 /* InstagramCell.m */; };
-		AD8D1870286B60F5002DD393 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D186F286B60F5002DD393 /* User.m */; };
 		AD8D1876286B68AE002DD393 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1875286B68AE002DD393 /* Post.m */; };
 		AD8D1879286BA8F1002DD393 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8D1878286BA8F1002DD393 /* DetailsViewController.m */; };
 		AD8D1880286D0162002DD393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD8D187F286D0162002DD393 /* Main.storyboard */; };
@@ -73,8 +72,6 @@
 		AD8D1869286A697C002DD393 /* PhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		AD8D186B286B5EAD002DD393 /* InstagramCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstagramCell.h; sourceTree = "<group>"; };
 		AD8D186C286B5EAD002DD393 /* InstagramCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramCell.m; sourceTree = "<group>"; };
-		AD8D186E286B60F5002DD393 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		AD8D186F286B60F5002DD393 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		AD8D1874286B68AE002DD393 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		AD8D1875286B68AE002DD393 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		AD8D1877286BA8F1002DD393 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
@@ -214,8 +211,6 @@
 		AD8D187D286CFDDA002DD393 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AD8D186E286B60F5002DD393 /* User.h */,
-				AD8D186F286B60F5002DD393 /* User.m */,
 				AD8D1874286B68AE002DD393 /* Post.h */,
 				AD8D1875286B68AE002DD393 /* Post.m */,
 			);
@@ -473,7 +468,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD8D1870286B60F5002DD393 /* User.m in Sources */,
 				AD8D1879286BA8F1002DD393 /* DetailsViewController.m in Sources */,
 				AD8D1835286A2A02002DD393 /* LoginViewController.m in Sources */,
 				AD8D186D286B5EAD002DD393 /* InstagramCell.m in Sources */,
